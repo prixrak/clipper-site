@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clipper — Privacy Policy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="muted">Last updated: 4 October 2026</p>
+
+  <p>Clipper is a self-hosted application. The person running it (the "operator") connects their own social media accounts so the application can upload videos and read statistics on their behalf. This policy describes what the application accesses and stores.</p>
+
+  <h2>Data accessed</h2>
+  <ul>
+    <li><strong>Account identity.</strong> After the operator authorises a platform (YouTube, TikTok, Instagram or X), Clipper reads the account's public id, handle and display name to label the connection.</li>
+    <li><strong>Uploads.</strong> Clipper uploads video files, titles and captions the operator produced.</li>
+    <li><strong>Statistics.</strong> Clipper reads view and like counts of the videos it uploaded, to report earnings.</li>
+  </ul>
+  <p>Clipper does not read messages, followers, contacts, or any content the operator did not upload through it. It does not access data about the viewers of published clips.</p>
+
+  <h2>Data stored</h2>
+  <p>Everything is stored on the operator's own computer or server, in a local database and token files: OAuth access and refresh tokens, the account identity above, the uploaded clips, their public URLs and the statistics snapshots. No data is sent to the application's authors or to any third party other than the platform the operator connected.</p>
+
+  <h2>Public video hosting</h2>
+  <p>Instagram requires the video to be downloadable from a public URL at publish time. Clipper places the file in a private storage bucket chosen by the operator, hands Instagram a short-lived signed link, and deletes the file after publishing.</p>
+
+  <h2>Retention and deletion</h2>
+  <p>The operator can revoke access at any time from the platform's own settings (Google account permissions, TikTok "Manage app permissions", Instagram "Apps and websites", X "Connected apps") and delete the local token files and database. Clipper keeps nothing elsewhere.</p>
+
+  <h2>Third-party services</h2>
+  <p>Clipper calls the official APIs of YouTube (Google), TikTok, Instagram (Meta) and X. Their handling of the data is governed by their own policies, including the <a href="https://www.google.com/policies/privacy">Google Privacy Policy</a>. Use of the YouTube API is subject to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: open an issue at <a href="https://github.com/prixrak/clipper-site">github.com/prixrak/clipper-site</a>.</p>
+
+  <p class="footer"><a href="index.html">Home</a> · <a href="terms.html">Terms of Service</a></p>
+</main>
+</body>
+</html>

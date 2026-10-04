@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clipper — sign-in complete</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Sign-in complete</h1>
+  <p class="lead">Copy this page's address and paste it into the <code>clipper post login</code> prompt in your terminal.</p>
+  <p><input id="url" type="text" readonly aria-label="Callback URL"> <button id="copy" type="button">Copy</button></p>
+  <p id="status" class="muted"></p>
+  <p class="muted">TikTok and Instagram only redirect to an https address, so the code arrives here instead of on your machine. Nothing on this page is sent anywhere; it only shows the address your browser landed on.</p>
+  <p class="footer"><a href="index.html">Home</a></p>
+</main>
+<script>
+  (function () {
+    var field = document.getElementById("url");
+    var status = document.getElementById("status");
+    field.value = window.location.href;
+    var params = new URLSearchParams(window.location.search);
+    if (params.get("error")) {
+      status.textContent = "The platform returned an error: " + (params.get("error_description") || params.get("error"));
+    } else if (!params.get("code")) {
+      status.textContent = "No authorisation code in the address. Start the login again from the terminal.";
+    }
+    document.getElementById("copy").addEventListener("click", function () {
+      field.select();
+      navigator.clipboard.writeText(field.value).then(function () {
+        status.textContent = "Copied.";
+      }, function () {
+        status.textContent = "Select the address and copy it manually.";
+      });
+    });
+  })();
+</script>
+</body>
+</html>
